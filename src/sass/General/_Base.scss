@@ -1,0 +1,38 @@
+* {
+    transition: all .3s;
+}
+
+html {
+    font-size: 62.5%; //1rem = 10px
+}
+
+body {
+    background-color: rgb(237, 241, 251);
+    font-family: 'Roboto', sans-serif;
+}
+
+.active-nav{
+    background-color: rgba(215, 175, 255, 0.342) !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+.active-user{
+    color: rgb(243, 132, 6);
+}
+
+//Scroll bar
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #faebeb;
+}
+
+::-webkit-scrollbar-thumb {
+    background: purple;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(3, 133, 20);
+}

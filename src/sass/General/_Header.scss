@@ -1,0 +1,32 @@
+.header{
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    justify-content: space-between;
+    background-color: rgba(114, 68, 136, 0.842);
+
+    &__logo{
+        width: 20%;
+            img{
+                width: 11.5rem;
+                filter:  brightness(0) invert(1)
+            }
+    }
+
+    &__user{
+        width: 17%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        cursor: pointer;
+        h3{
+            font-size: 2.1rem;
+            color: white;
+        }    
+        img{
+                border-radius: 50%;
+                width: 5.5rem;
+                box-shadow: 0 .1rem 2rem rgba(93, 1, 93, 0.582);
+            }
+    }
+}

@@ -1,0 +1,25 @@
+.navbar{
+    background-color:rgb(103, 5, 133);
+    display: flex;
+    padding: 3rem;
+    height: auto;
+    border-right: .1rem solid rgba(128, 9, 128, 0.342);
+    flex-direction: column;
+    justify-content: flex-start;
+
+    a{  
+        text-decoration: none;
+        cursor: pointer;
+        padding: 2rem;
+        font-size: 1.8rem;
+        color: rgb(246, 246, 246);
+        font-weight: 500;
+        border-bottom:.1rem solid  rgba(245, 222, 179, 0.295);
+       
+        &:hover{
+            background-color: rgba(203, 201, 248, 0.151);
+            color: rgb(255, 255, 255);
+            ;
+        }
+    }
+}

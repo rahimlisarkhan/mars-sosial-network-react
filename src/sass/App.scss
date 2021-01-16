@@ -1,0 +1,19 @@
+//General
+@import'./General/Reset';
+@import './General/Variables';
+@import './General/Font';
+@import './General/Grid';
+@import './General/Base';
+
+//Pages
+@import './General/Header';
+@import './General/Navbar';
+
+//Profile Page
+@import './ProfilePage/ProfilePage';
+@import './ProfilePage/UserProfilCard';
+@import './ProfilePage/UserAddPost';
+@import './ProfilePage/UserSharePosts';
+
+//Messages Page
+@import './MessagesPage/MessagesPage'

@@ -1,0 +1,14 @@
+// GRID AREA
+.container-H{ grid-area: H;};
+.container-N{ grid-area: N;};
+.container-C{ grid-area: C;};
+
+
+// PARENT CONTAINER
+.container {
+    display: grid;
+    grid-template:
+        'H H'
+        'N C'
+        / 15% 85%;
+}
