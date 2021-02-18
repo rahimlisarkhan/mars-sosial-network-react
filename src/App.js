@@ -1,31 +1,19 @@
-//Router
-import { Route } from 'react-router-dom';
-
-//SASS
+import { Redirect, Route, Switch } from 'react-router-dom';
+import Authenfication from './components/Authenfication';
+import GeneralPage from './components/GeneralPage';
 import './sass/App.scss';
-
-//Pages
-import Header from './components/Header/Header';
-import Navbar from './components/Navbar/Navbar';
-import ProfilePage from './components/ProfilePage/ProfilePage';
-import MessagesPage from './components/MessagesPage/MessagesPage'
-
 
 
 //APP
-let App = (props) => {
- 
+let App = () => {
   return (
-    <section className="container">
-      
-       <Header data={props.state.profile} />
-      <Navbar />
-      <Route path='/' exact render={()=><ProfilePage profile={props.state.profile}/>} />
-      <Route path='/messages'  render={()=><MessagesPage addFunc={props.add} userMessage={props.state.usersMessage}  users={props.state.users}/>} />
+    <Switch>
+      <Route path='/login' component={Authenfication} />
+      <Route path='/mars-group/' component={GeneralPage} />
+      <Redirect from='/' to='/mars-group' />
+    </Switch>
 
-    </section>
   );
 }
-
 
 export default App;

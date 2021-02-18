@@ -1,24 +1,40 @@
-import React from 'react'
-import {withRouter} from 'react-router-dom';
+import React from "react";
 
 //Message child column page
-import MessageColumn from './MessageColumn/MessageColumn';
-import UsersColumn from './UsersColumn/UsersColumn';
+import MessageColumn from "./MessageColumn/MessageColumn";
+import UsersColumn from "./UsersColumn/UsersColumn";
 
 const MessagesPage = (props) => {
   
-    // console.log(props.userMessage)
-    let locationPathId = props.location.pathname.split('/')[2],
-        locationFilterData = props.userMessage.filter(el=>el.id == locationPathId),
-        userFilterImage = props.users.filter(el=>el.id==locationPathId)
-    
-    return (
-        <div className="content-messages container-C">
-            <UsersColumn parentPathName={props.match.path} data={props.users} />
-            <MessageColumn  userImage={userFilterImage[0].image}   data={locationFilterData}/>
-        </div>
-    )
-}
+  return (
+   
+    <div className="content-messages container-C">
 
+          {/* USERS COLUMN */}
+          <UsersColumn 
+          data={props.data.users} 
+          getUserMessagesById={props.getUserMessagesById}
+          />
 
-export default withRouter(MessagesPage);
+          {/* MESSAGE COLUMN */}
+          {props.data.usersMessage && props.userFilterImage ? (
+            <MessageColumn
+              updateData={props.data}
+              userImage={props.userFilterImage.image}
+              data={props.data.usersMessage}
+              handleChange={props.handleChange}
+              handleClick={props.handleClick}
+            />
+          ) : (
+            <div className="begin-messages">
+              <p>
+                Welcome! <br /> Please section message box
+              </p>
+            </div>
+          )}
+
+    </div>
+  );
+};
+
+export default MessagesPage;

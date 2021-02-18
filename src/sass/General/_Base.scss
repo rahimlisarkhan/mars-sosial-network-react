@@ -7,17 +7,21 @@ html {
 }
 
 body {
-    background-color: rgb(237, 241, 251);
+    background-image:url('../../img/Asset\ 1.png'), linear-gradient($color-dark,$color-dark) ;
     font-family: 'Roboto', sans-serif;
 }
 
 .active-nav{
-    background-color: rgba(215, 175, 255, 0.342) !important;
-    color: rgb(255, 255, 255) !important;
+    background-color: rgba(29, 135, 177, 0.555) !important;
+    color: rgb(236, 236, 236) !important;
 }
 
 .active-user{
-    color: rgb(243, 132, 6);
+    color: rgb(255, 166, 0);
+}
+
+.text-lowercase{
+    text-transform: lowercase !important;
 }
 
 //Scroll bar
@@ -26,13 +30,13 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #faebeb;
+    background: $color-dark;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: purple;
+    background: $color-green;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(3, 133, 20);
+    background: $color-green;
 }

@@ -1,11 +1,18 @@
 //General
 @import'./General/Reset';
 @import './General/Variables';
-@import './General/Font';
+@import './General/Mixin';
 @import './General/Grid';
+@import './General/Font';
 @import './General/Base';
 
-//Pages
+//Common
+@import './Common/loader';
+
+//Login
+@import'./LoginPage';
+
+//Sections
 @import './General/Header';
 @import './General/Navbar';
 
@@ -16,4 +23,8 @@
 @import './ProfilePage/UserSharePosts';
 
 //Messages Page
-@import './MessagesPage/MessagesPage'
+@import './MessagesPage/MessagesPage';
+
+//Freinds Page
+@import './FreindsPage//FreindsPage'
+

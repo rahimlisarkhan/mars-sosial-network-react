@@ -11,4 +11,12 @@
         'H H'
         'N C'
         / 15% 85%;
+
+    @include respond(phone){
+        grid-template:
+        'H'
+        'N'
+        'C'
+        / 100% !important;
+    }
 }

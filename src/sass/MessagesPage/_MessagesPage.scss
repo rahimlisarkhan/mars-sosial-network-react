@@ -7,26 +7,33 @@
     &__users{
         width: 23%;
         padding: 3rem;
-        height: auto;
+        background-color: rgba(29, 135, 177, 0.555) !important;
+        height: 100vh;
         border-right:.1rem solid rgba(36, 1, 39, 0.116);
         display: flex;
+        box-shadow: .5rem 1rem 1rem rgba(0, 0, 0, 0.384);
         align-items: center;
         flex-direction: column;
+        justify-content:space-evenly;
+
 
         a{  
             padding: 1rem 0;
             width: 70%;
+            text-transform: capitalize;
             text-decoration: none;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
+            letter-spacing:.1rem;
             margin-top:1rem ;
+            color: rgb(238, 238, 238);
             text-align: left;
             list-style: circle;
 
             &:not(:last-child){
-                border-bottom:.1rem solid rgba(32, 3, 41, 0.157) ;
+                border-bottom:.1rem solid rgba(255, 255, 255, 0.157) ;
             }
             &:hover{
-                color: rgb(5, 161, 39);
+                color: rgb(5, 151, 161);
             }
         }
     }
@@ -43,8 +50,8 @@
             width:80%;
             display: flex;
             padding: 4rem;
-            box-shadow: 0 .1rem 2rem rgba(0, 0, 0, 0.089);
-            background-color: rgb(246, 230, 253);
+            box-shadow: 0 .1rem 2rem rgba(0, 0, 0, 0.555);
+            background-color:rgb(118, 126, 141);
             flex-direction: column;
             align-items: center;
             overflow-y: scroll ;
@@ -52,6 +59,8 @@
             height: 50rem;
             &__group{
                 width: 80%;
+                border-radius: 4rem;
+                background-color: rgb(216, 222, 233);
                 padding-bottom: 2.2rem;
                 margin: 1rem 0;
              
@@ -63,7 +72,7 @@
                 }
 
                 &:hover{
-                    background-color: rgba(128, 0, 128, 0.109);
+                    background-color: rgba(209, 211, 212, 0.363);
                 }
                 img{
                     width: 6rem;
@@ -83,12 +92,44 @@
                     span{
                         font-size: 1.4rem;
                         margin-top:1rem ;
-                        color: rgb(34, 0, 34);
+                        color: rgb(255, 255, 255);
                     }
                 }
             }
         }
         
     
+    }
+}
+
+
+.begin-messages{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88rem;
+   
+
+
+    p{
+        letter-spacing: .3rem;
+        text-align: center;
+        line-height: 1.4;
+        color:rgb(255, 255, 255);
+        font-size: 4rem;
+        animation: tween-color 15s linear 5s infinite alternate;
+    }
+
+}
+
+@keyframes tween-color {
+    from {
+      transform: scale(1.02);;
+    }
+
+    to{
+
+        transform: scale(1.5);
     }
 }

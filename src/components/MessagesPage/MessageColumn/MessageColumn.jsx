@@ -1,18 +1,33 @@
-import React from 'react'
-import UserAddPost from '../../ProfilePage/UserAddPost/UserAddPost'
-import MessageColumnList from './MessageColumnList'
+import React from "react";
+import Loader from "../../common/Loader";
+import MessageColumnList from "./MessageColumnList";
+import UserAddMessage from "./UserAddMessage";
 
-const MessageColumn = (props) =>{
+const MessageColumn = (props) => {
 
-    return(
-        <div className="content-messages__message">
-            <div className="content-messages__message__content">
-             {props.data[0].messages.map((el,i)=> <MessageColumnList key={i} userImage={props.userImage} userData={el} />)}
-            </div>
-            <UserAddPost headerName="Write message" objKey='message' data={props.data[0].messages} placeholder="Write your message" btnName="Send"/>
-        </div>
-    )
-}
+  return (
+    <div className="content-messages__message">
+        
+       { !props.updateData.isLoadingMsg 
+          ? <div className="content-messages__message__content">
+                    {props.data.map((el, i) => (
+                      <MessageColumnList
+                        key={i}
+                        userImage={props.userImage}
+                        userData={el}
+                      />
+                    ))}
+            </div> 
+          : <Loader/>
+        }
 
+      <UserAddMessage
+        disableInput ={props.updateData.disableInput}
+        handleChange={props.handleChange}
+        handleClick={props.handleClick}
+      />
+    </div>
+  );
+};
 
-export default MessageColumn
+export default MessageColumn;

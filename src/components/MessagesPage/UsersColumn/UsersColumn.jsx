@@ -1,15 +1,19 @@
-import React from 'react'
-import UsersColumnList from './UsersColumnList'
+import React from "react";
+import UsersColumnList from "./UsersColumnList";
 
+const UsersColumn = (props) => {
+  return (
+    <div className="content-messages__users">
+      {props.data.filter(el => el.id !==6).map((el) => (
+        <UsersColumnList
+          key={el.id}
+          getUserMessagesById={props.getUserMessagesById}
+          userdata={el}
+          userId={el.id}
+        />
+      ))}
+    </div>
+  );
+};
 
-const UsersColumn = (props) =>{
-    // console.log(props)
-    return(
-        <div className="content-messages__users">
-            {props.data.map((el,i)=><UsersColumnList key={i} parentPathName={props.parentPathName}  userdata={el} userKey={i+1} />)}
-        </div>
-    )
-}
-
-
-export default UsersColumn
+export default UsersColumn;
