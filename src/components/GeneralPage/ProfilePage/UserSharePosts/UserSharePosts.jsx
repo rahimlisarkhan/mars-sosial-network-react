@@ -1,5 +1,5 @@
 import React from "react";
-import Loader from "../../common/Loader";
+import Loader from "../../../common/Loader";
 import UserPostList from "./UserPostList";
 
 const UserSharePosts = (props) => {

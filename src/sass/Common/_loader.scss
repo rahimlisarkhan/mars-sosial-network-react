@@ -3,7 +3,7 @@
   position: absolute;
   top: 0%;
   left: 0%;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 166, 0, 0.137);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +23,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background:$color-green;
+  background:orange;
   margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {

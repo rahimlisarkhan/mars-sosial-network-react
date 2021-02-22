@@ -46,12 +46,13 @@ const UserInfoForm = Yup.object().shape({
 
 //FORM COMPONENTS
 let ProfilePageForm = (props) => {
-  
+
+  console.log(props);
   return (
     //INTIAL STATE FOR FORM
     <Formik initialValues={props.userdata}
             validationSchema={UserInfoForm}
-            onSubmit ={ (values) => props.formPut(values) } >
+            onSubmit ={ (values) => props.formPut(values,props.userID) } >
 
 
         {/* handlesubmit,handlechange and more for form  */}

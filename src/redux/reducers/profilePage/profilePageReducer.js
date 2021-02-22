@@ -3,6 +3,7 @@ import * as type from "../../types";
 let initialState = {
     profile: {
         user: [],
+        userID:null,
         posts:null,
         disableInput:false,
         isLoadingUser:null,
@@ -22,6 +23,9 @@ export const profilePageReducer = (state = initialState, action) => {
 
         case type.GET_USER_POSTS:
             return {...state, profile:{...state.profile, posts:action.payload}}
+
+        case type.USER_ID:
+            return {...state, profile:{...state.profile, userID:action.payload }}
 
         case type.DISABLE_INPUT_BTN:
             return {...state, profile:{...state.profile, disableInput:action.payload}}

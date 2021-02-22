@@ -6,20 +6,20 @@ import logo from "../../img/logo.png";
 
 
 let Header = (props) =>  {
-    useEffect(() => { props.getUserHeader()},[props.data.user])  
+    useEffect(() => { props.getUserHeader()},[])  
 
     return (
       <header className="header container-H">
           <div className="header-content">
               <div className="header__logo">
-              <img src={logo} />
+              <img src={logo} alt='user'/>
             </div>
 
             <div className="header__user">
               <h3>
                 {props.data.user.first_name} {props.data.user.last_name}
               </h3>
-              <img src={props.data.user.image} />
+              <img src={props.data.user.image} alt='user' />
             </div>
           </div>
       </header>

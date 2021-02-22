@@ -4,7 +4,7 @@ import React from "react";
 import UserProfilCard from "./UserProfilCard/UserProfilCard";
 import UserAddPost from "./UserAddPost/UserAddPost";
 import UserSharePosts from "./UserSharePosts/UserSharePosts";
-import Loader from "../common/Loader";
+import Loader from "../../common/Loader";
 
 const ProfilePage = (props) => {
 
@@ -14,9 +14,10 @@ const ProfilePage = (props) => {
           <UserProfilCard userdata={props.propsData.profile.user}
                           formPut={props.formPut}
                           isLoading={props.propsData.profile.disableInput}
+                          userID={props.propsData.profile.userID }
                           />
                          
-          {(props.propsData.profile.user.id===6 )
+          {(props.propsData.profile.user.id === props.propsData.profile.userID )
             ? <UserAddPost
                 handleClick={props.handleClick}
                 disableInput ={props.propsData.profile.disableInput}

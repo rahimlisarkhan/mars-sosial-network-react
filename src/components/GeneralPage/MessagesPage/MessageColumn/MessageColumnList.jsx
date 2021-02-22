@@ -4,7 +4,7 @@ const MessageColumnList = (props) =>{
     
     return(
         <div className="content-messages__message__content__group">
-            <img src={props.userImage}/>
+            <img src={props.userImage} alt='user'/>
             <div className="content-messages__message__content__group__answer">
                 <p>{props.userData.msg_content}</p>
                 {/* <span>{props.userData.create_at}</span> */}

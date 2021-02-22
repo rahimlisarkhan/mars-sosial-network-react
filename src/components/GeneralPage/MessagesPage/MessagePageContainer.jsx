@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import {addMessage,getUsers,getMessagesAction} from "../../redux/action/messagePage/messagePageAction";
+import {addMessage,getUsers,getMessagesAction} from "../../../redux/action/messagePage/messagePageAction";
 import { connect } from "react-redux";
 import MessagesPage from "./MessagesPage";
-import Loader from "../common/Loader";
+import Loader from "../../common/Loader";
 import { compose } from "redux";
-import { AuthRequired } from "../HOC/authRequired";
+import { AuthRequired } from "../../HOC/authRequired";
 
 let MessagePageContainer = (props) => {
   
@@ -20,7 +20,6 @@ let MessagePageContainer = (props) => {
           handleClick={(value) => props.addMessage(value, locationPathId)}
           /> 
         : <Loader/>
-       
     );
 }
 

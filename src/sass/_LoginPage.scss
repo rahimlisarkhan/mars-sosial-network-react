@@ -1,3 +1,5 @@
+
+//sign up
 .form{
     display: flex;
     justify-content: center;
@@ -6,42 +8,74 @@
     height: 100vh;
     background-image:url('../img/Asset\ 1.png'), linear-gradient($color-dark,$color-dark) ;
 
+ 
     form{
-        width:45%;
+        width:70%;
         padding: 3rem;
-        background-color: rgb(46, 52, 64);
+        background-color: rgb(29, 11, 124);
+        border-radius: 1rem;
         display: flex;
         box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.568);
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        height: 67rem;
+        height: 88rem;
 
+        .signup-content{
+            display: flex;
+            align-content: space-evenly;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        label{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 5rem;
+            color:$color-green;
+            background-color: rgb(71, 58, 134);
+            cursor: pointer;
+            input{
+                display: none;
+            }
+
+            span{
+                margin:0 1rem ;
+                font-size: 2rem;
+            }
+            &:hover{
+                color: rgb(255, 255, 255);
+            }
+
+
+        }
         img{
             filter:  brightness(0) invert(1);
-            width: 30%;
+            width: 17%;
         }
         h3{
-            font-size: 3rem;
+            font-size: 2.5rem;
             text-transform: lowercase;
             letter-spacing: .8rem;
             color: rgb(209, 209, 209);
         }
         .login-group{
-            width: 55%;
+            width: 45%;
+            margin: 1rem ;
             position: relative;
             input{
                 width: 100%;
-                height: 6rem;
-                font-size: 3rem;
+                height: 4.5rem;
+                font-size: 2.5rem;
                 color: white;
                 text-align: center;
                 letter-spacing: .2rem;
-                background-color: rgb(76, 86, 106);
+                background-color: rgb(71, 58, 134);
                 border: none;
     
                 &::placeholder{
-                    font-size: 3rem;
+                    font-size: 2.5rem;
                     text-align: center;
                     color: rgb(167, 167, 167);
                 }
@@ -50,15 +84,15 @@
                     font-size: 3rem;
                     text-align: center;
                     color: white;
-                    background-color: rgb(76, 86, 106);
+                    background-color: rgb(117, 97, 218);
                 }
             }
             p{
                 position: absolute;
-                top: -50%;
+                top: -42%;
                 text-transform: lowercase;
                 color: rgb(255, 238, 0);
-                font-size: 2rem;
+                font-size: 1.7rem;
             }
             .passwordView-content{
                 position: absolute;
@@ -79,13 +113,13 @@
         }
 
         button{
-            width: 55%;
+            width: 45%;
             color: white;
             font-size: 2rem;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: .3rem;
-            height: 6rem;
+            height: 5rem;
             border: none;
             background-color: $color-green;
 
@@ -96,4 +130,28 @@
     }
 
 
+}
+
+//login
+.login{
+    form{
+        width:45% !important ;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 67rem !important;
+        .login-group{
+            input{
+                height: 6rem !important;
+                &::placeholder{
+                    font-size: 3rem !important;
+                }
+            }
+            p{
+                top: -50%;
+                font-size: 2rem !important;
+            }
+        }
+    }
+    
 }

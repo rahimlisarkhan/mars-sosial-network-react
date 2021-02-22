@@ -33,11 +33,16 @@ export let getMessagesAction = id => dispatch => {
     
     dispatch({type:type.REQUEST_LOADING_MSG, payload:true})
     
-    baseURL.get(`/messages/6/${id}/`)
+    baseURL.get(`/messages/${id}/`)
     .then((resp) => dispatch({type:type.GET_MESSAGES_BY_ID ,payload:resp.data}) )
     .finally( ()=> dispatch({type:type.REQUEST_LOADING_MSG, payload:false}))
     .catch(err => dispatch({type:type.ERROR_MESSAGE, payload:true}))
 }
 
 
+//USER FOLLOW
 
+export let followUser = id => dispatch => {
+    baseURL.get(`/follow/${id}/`)
+    .then((resp) => console.log(resp) )
+}

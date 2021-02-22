@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { authenAction } from "../redux/action";
-import logo from "../img/logo.png";
+import { authenAction } from "../../redux/action";
+import logo from "../../img/logo.png";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import {Form,Field,ErrorMessage, Formik}  from "formik";
 import * as Yup from "yup";
+import { ToastContainer } from "react-toastify";
+
 
 //VALIDATE MESSAGES
 const UserLogin = Yup.object().shape({
@@ -19,7 +21,7 @@ const UserLogin = Yup.object().shape({
     .required("Required"),
 });
 
-let Authenfication = (props) => {
+let AuthLogin = (props) => {
   const [editMode, setEditMode] = useState(false);
 
   return (
@@ -29,20 +31,20 @@ let Authenfication = (props) => {
       onSubmit={(values) => props.authenAction(values, props.history.push)}
     >
         
-      {({ formik }) => (
-        <div className="form">
+      {( formik) => (
+        <div className="form login">
           <Form onSubmit={formik.handleSubmit}>
             <img src={logo} alt="logo" />
             <h3>Login</h3>
 
-            <div className="login-group">
+            <div className="login-group ">
               <Field type="text" name="username" placeholder="username" />
               <p>
                 <ErrorMessage name="username" />
               </p>
             </div>
 
-            <div className="login-group">
+            <div className="login-group ">
               <Field
                 type={!editMode ? "password" : "text"}
                 name="password"
@@ -64,11 +66,13 @@ let Authenfication = (props) => {
               </p>
             </div>
             <button type="submit"> Login</button>
+           
           </Form>
+          <ToastContainer className='font-size' />
         </div>
       )}
     </Formik>
   );
 };
 
-export default connect(null, { authenAction })(Authenfication);
+export default connect(null, { authenAction })(AuthLogin);

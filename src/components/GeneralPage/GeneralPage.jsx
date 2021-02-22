@@ -1,17 +1,17 @@
 import React from 'react'
-import Header from './Header/Header'
-import Navbar from './Navbar/Navbar'
+import Header from '../Header/Header'
+import Navbar from '../Navbar/Navbar'
 import ProfilePageContainer from './ProfilePage/ProfilePageContainer'
 import MessagesPageContainer from './MessagesPage/MessagePageContainer'
 import { Redirect, Route } from 'react-router-dom'
-import { AuthRequired } from './HOC/authRequired'
+import { AuthRequired } from '../HOC/authRequired'
 import FreindsPageContainer from './FreindsPage/FreindsPageContainer'
 
 
 let GeneralPage = (props) => {
 
         if(!props.authenfication)
-            return<Redirect to='/login'/>
+            return <Redirect to='/welcome/login'/>
 
         return (
             <section className="container">

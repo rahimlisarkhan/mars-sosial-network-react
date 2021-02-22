@@ -14,9 +14,9 @@ class UserAddMessage extends React.Component {
           placeholder="Write your message"
         ></textarea>
 
-        <button onClick={() => (
-          this.props.handleClick(this.state.msg_content),
-          this.setState({ msg_content:'' }) )}
+        <button onClick={() => {
+          this.props.handleClick(this.state.msg_content)
+          this.setState({ msg_content:'' }) }}
           disabled={this.props.disableInput}
           >Send</button>
       </div>

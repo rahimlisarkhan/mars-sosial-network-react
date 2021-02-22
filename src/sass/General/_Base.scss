@@ -11,6 +11,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.unFollowBtn{
+    background-color: gray !important;
+}
+
 .active-nav{
     background-color: rgba(29, 135, 177, 0.555) !important;
     color: rgb(236, 236, 236) !important;
@@ -22,6 +26,10 @@ body {
 
 .text-lowercase{
     text-transform: lowercase !important;
+}
+
+.font-size{
+    font-size: 2rem !important;
 }
 
 //Scroll bar

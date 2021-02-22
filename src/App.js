@@ -1,6 +1,6 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
-import Authenfication from './components/Authenfication';
-import GeneralPage from './components/GeneralPage';
+import GeneralPage from './components/GeneralPage/GeneralPage';
+import WelcomePage from './components/WelcomePage/WelcomePage';
 import './sass/App.scss';
 
 
@@ -8,11 +8,10 @@ import './sass/App.scss';
 let App = () => {
   return (
     <Switch>
-      <Route path='/login' component={Authenfication} />
+      <Route path='/welcome' component={WelcomePage} />
       <Route path='/mars-group/' component={GeneralPage} />
       <Redirect from='/' to='/mars-group' />
     </Switch>
-
   );
 }
 

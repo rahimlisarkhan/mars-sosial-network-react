@@ -6,15 +6,16 @@
     //User Column Page
     &__users{
         width: 23%;
+        overflow-y: scroll;
         padding: 3rem;
         background-color: rgba(29, 135, 177, 0.555) !important;
-        height: 100vh;
+        height: 60rem;
         border-right:.1rem solid rgba(36, 1, 39, 0.116);
         display: flex;
         box-shadow: .5rem 1rem 1rem rgba(0, 0, 0, 0.384);
         align-items: center;
         flex-direction: column;
-        justify-content:space-evenly;
+        justify-content:center;
 
 
         a{  
@@ -30,7 +31,10 @@
             list-style: circle;
 
             &:not(:last-child){
-                border-bottom:.1rem solid rgba(255, 255, 255, 0.157) ;
+                border-bottom:.1rem solid rgba(255, 255, 255, 0.644) ;
+            }
+            &:not(:first-child){
+                border-bottom:.1rem solid rgba(255, 255, 255, 0.644) ;
             }
             &:hover{
                 color: rgb(5, 151, 161);

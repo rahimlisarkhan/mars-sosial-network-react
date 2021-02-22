@@ -16,10 +16,10 @@ let UserAddPost = (props) => {
         ></textarea>
 
         <button
-          onClick={() => (
-            props.handleClick(post_content),
+          onClick={() => {
+            props.handleClick(post_content)
             setPostContent("")
-          )}
+          }}
           disabled={props.disableInput}
         >
           Share
