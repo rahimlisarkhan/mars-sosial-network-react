@@ -1,4 +1,3 @@
-import axios from "axios"
 import { toast } from "react-toastify"
 import * as type from "../types"
 import { baseURL } from "./baseURL"
@@ -12,7 +11,7 @@ export let authenAction = (data, callback) => dispatch => {
     .then(response =>{
         let userToken =response.data.access
         
-        axios.defaults.headers.common['Authorization'] =`Bearer ${userToken}`;
+        baseURL.defaults.headers.common['Authorization'] =`Bearer ${userToken}`;
         dispatch({type:type.IS_AUTH, payload:userToken})
 
         callback('/mars-group/')
@@ -27,8 +26,10 @@ export let authenAction = (data, callback) => dispatch => {
 export let checkToken = token => dispatch => {
 
     console.log(token);
-    axios.defaults.headers.common['Authorization'] =`Bearer ${token}`;
+    baseURL.defaults.headers.common['Authorization'] =`Bearer ${token}`;
     dispatch({type:type.IS_AUTH, payload:token})
+
+    
     dispatch({type:type.USER_ID, payload:decode(token).user_id})
 } 
 

@@ -12,7 +12,7 @@ let ProfilePageContainer = (props) =>{
  
 
     useEffect(()=>{props.getUser(props.match.params.id?props.match.params.id:props.state.profile.userID)
-                   props.getUserPost(props.match.params.id?props.match.params.id:props.state.profile.userID)
+                   props.getUserPost(props.match.params.id?props.match.params.id:'')
     },[])
                         
         return(

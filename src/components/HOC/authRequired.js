@@ -10,7 +10,7 @@ export const AuthRequired = Component => {
         useEffect(() =>{props.checkToken(props.authenfication)},[])
 
             if(!props.authenfication)
-                return <Redirect to='welcome/login' exact/>
+                return <Redirect to='/welcome/login'/>
             
             return <Component  {...props} />
         }

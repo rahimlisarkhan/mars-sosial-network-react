@@ -29,7 +29,7 @@ export let getUser = (id) => (dispatch) =>{
 export let getUserPost = (id) => (dispatch) => {
     
     dispatch({type:type.REQUEST_LOADING_POST, payload:true})
-    baseURL.get(`/posts/${id}`)
+    baseURL.get(`/posts/?user_id=${id}`)
          .then(resp => dispatch({type:type.GET_USER_POSTS, payload:resp.data}))
          .catch(err => dispatch({type:type.ERROR_MESSAGE, payload:true}))
          .finally(()=> dispatch({type:type.REQUEST_LOADING_POST, payload:false}))

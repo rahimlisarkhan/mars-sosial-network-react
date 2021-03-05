@@ -44,6 +44,7 @@ const UserLogin = Yup.object().shape({
     .required("Required"),
 });
 
+
 let AuthLogin = (props) => {
   const [editModeP1, setEditMode] = useState(false);
   const [editModeP2, setEditModeP2] = useState(false);
@@ -76,11 +77,13 @@ let AuthLogin = (props) => {
         data.append("email", values.email);
 
         props.authenSignUpAction(data, props.history.push);
+
       }}
     >
       {(formik) => (
+        <Form onSubmit={formik.handleSubmit}>
         <div className="form">
-          <Form onSubmit={formik.handleSubmit}>
+          
             <img src={logo} alt="logo" />
             <h3>Sign up</h3>
             <div className="signup-content">
@@ -183,17 +186,14 @@ let AuthLogin = (props) => {
                     name="image"
                     id="image"
                     placeholder="image"
-                    onChange={(e) =>
-                      formik.setFieldValue("image", e.target.files[0])
-                    }
-                  />
+                    onChange={(e) =>formik.setFieldValue("image", e.target.files[0])}/>
                   <RiFolderUploadFill /> <span>Upload profile image </span>
                 </label>
                 <p>
                   <ErrorMessage name="image" />
                 </p>
               </div>
-              <div className="login-group">
+                <div className="login-group">
                 <label htmlFor="image">
                   <Input
                     type="file"
@@ -220,10 +220,12 @@ let AuthLogin = (props) => {
             </div>
 
             <button type="submit"> Sign up</button>
-          </Form>
+        
 
-          <ToastContainer className="font-size" />
+          {/* <ToastContainer className="font-size" /> */}
+
         </div>
+        </Form>
       )}
     </Formik>
   );
